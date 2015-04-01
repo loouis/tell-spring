@@ -164,6 +164,35 @@ button {
   transform: translate(-50px, -50px);
 }
 
+.arrow-down-animation {
+  transform: translate(0px, 4px);
+  -webkit-transform: translate(0px, 4px);
+  -moz-transform: translate(0px, 4px);
+  -o-transform: translate(0px, 4px);
+}
+
+body.page-load-animate span.mask .page-load-element {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+  transform: translate(0, 0px) !important;
+  -webkit-transition-delay: 1s;
+  /* Safari */
+  transition-delay: 1s;
+}
+
+body.page-load-animate video.masthead-video {
+  opacity: 1;
+}
+
+body.page-load-animate section.hero .wrapper {
+  opacity: 1;
+  transform: scale(1) !important;
+}
+
+.lights-out {
+  opacity: 0.2;
+}
+
 /* Overlay style */
 .overlay {
   position: fixed;
@@ -310,6 +339,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
   -webkit-box-sizing: border-box;
 }
 
+html {
+  background: black;
+}
+
 section, footer {
   width: 100%;
   overflow: hidden;
@@ -326,6 +359,8 @@ img {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 button {
@@ -344,20 +379,38 @@ button a {
 
 /*----------------------------------------------------------------------------- Hero */
 section.hero {
-  background: url("./img/hero-img.jpg") no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  transition: opacity 2s ease-in-out;
+  background: black;
+  z-index: 1;
+  height: 1200px;
+}
+section.hero .wrapper {
+  transition: opacity 1.9s ease-in-out;
+  opacity: 0;
 }
 section.hero .wrapper div {
   text-align: center;
 }
+section.hero .wrapper div button {
+  background: rgba(0, 0, 0, 0.4);
+}
 section.hero .wrapper div button a {
   color: white;
   text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+section.hero .wrapper div button:hover a {
+  letter-spacing: 4px;
+}
+section.hero .wrapper span.mask {
+  overflow: hidden;
+  display: block;
+}
+section.hero .wrapper span.mask .page-load-element {
+  opacity: 0;
+  transform: scale(0.95);
+  padding: 2px 0;
+  transition: transform 1.6s ease-in-out;
 }
 section.hero .wrapper .logo {
   width: 90%;
@@ -397,18 +450,49 @@ section.hero .wrapper .logo .langauge-logo:before {
   }
 }
 section.hero .scroll-down {
-  width: 30px;
-  height: 50px;
-  bottom: 20px;
+  width: 100px;
+  height: 30px;
+  bottom: 40px;
   right: 40px;
   position: absolute;
+  left: 50%;
+  right: 50%;
+  margin-left: -50px;
+  opacity: 0.5;
   z-index: 101;
+  color: white;
   cursor: pointer;
+  transition: opacity .3s ease-in-out;
+}
+section.hero .scroll-down p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+section.hero .scroll-down div {
+  width: 15px;
+  overflow: hidden;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+}
+section.hero .scroll-down div img {
+  transition: transform .7s ease-in-out;
+}
+section.hero .scroll-down:hover {
+  opacity: 0.8;
+}
+
+video.masthead-video {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
 /*----------------------------------------------------------------------------- Reviews section */
 section#reviews {
   padding-top: 100px;
+  background: #1b1920;
 }
 section#reviews .review__container {
   width: 100%;
@@ -421,10 +505,13 @@ section#reviews .review__container h4 {
 section#reviews .review__container .slider-arrows {
   width: 40px;
   height: 40px;
-  background: red;
 }
 section#reviews .review__container ul.bx-slider .wrapper {
   width: 100%;
+}
+section#reviews .review__container ul.bx-slider .wrapper blockquote {
+  max-width: 600px;
+  margin: 0 auto;
 }
 section#reviews .review__container ul.bx-slider .hero-slider {
   color: white;
@@ -440,39 +527,41 @@ section#reviews .review__container ul.bx-slider .hero-slider .review-icon img {
 
 /*----------------------------------------------------------------------------- Billing back */
 section#billing-block {
+  background: #1b1920;
   width: 100%;
-  padding: 0px 0 80px 0;
+  padding: 100px 0 80px 0;
 }
 section#billing-block .wrapper {
   max-width: 860px;
+}
+section#billing-block .film-company-logos ul {
+  text-align: center;
+  max-width: 500px;
+  margin: 25px auto;
+}
+section#billing-block .film-company-logos ul li {
+  padding: 0 20px;
+  width: 32.33%;
+  opacity: 0.5;
+  display: inline-block;
 }
 
 /*----------------------------------------------------------------------------- Footer */
 footer {
   width: 100%;
   display: block;
-  color: white;
-  padding: 20px 0 60px 0;
+  color: #363340;
+  padding: 20px 0 30px 0;
   font-size: 14px;
-  opacity: 0.6;
   letter-spacing: 1px;
+  background: #1b1920;
 }
 footer .wrapper {
   position: relative;
 }
-footer .wrapper:after {
-  position: absolute;
-  width: 200px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.4);
-  content: "";
-  left: 50%;
-  right: 50%;
-  margin-left: -100px;
-  top: -20px;
-}
 footer .wrapper p {
   text-align: center;
+  color: #363340;
 }
 
 /*----------------------------------------------------------------------------- Background images */
@@ -517,20 +606,34 @@ section#video-lightbox {
   display: none;
 }
 section#video-lightbox .wrapper {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
-section#video-lightbox button.close-lightbox {
+section#video-lightbox .close-lightbox-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+section#video-lightbox .close-lightbox-bar button.close-lightbox {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  height: 35px;
-  width: 35px;
+  top: 21px;
+  right: 50%;
+  left: 50%;
+  margin-left: -20px;
+  height: 25px;
+  width: 25px;
   outline: none;
   border: none;
+  z-index: 9999;
+  padding: 0;
+  margin-top: 0;
 }
-section#video-lightbox button.close-lightbox:before, section#video-lightbox button.close-lightbox:after {
+section#video-lightbox .close-lightbox-bar button.close-lightbox:before, section#video-lightbox .close-lightbox-bar button.close-lightbox:after {
   content: '';
   position: absolute;
   height: 2px;
@@ -540,14 +643,14 @@ section#video-lightbox button.close-lightbox:before, section#video-lightbox butt
   margin-top: -1px;
   background: white;
 }
-section#video-lightbox button.close-lightbox:before {
+section#video-lightbox .close-lightbox-bar button.close-lightbox:before {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-section#video-lightbox button.close-lightbox:after {
+section#video-lightbox .close-lightbox-bar button.close-lightbox:after {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -564,7 +667,7 @@ section#video-lightbox button.close-lightbox:after {
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a.active {
-  background: white;
+  background: #363340;
   opacity: 1;
 }
 
@@ -578,8 +681,8 @@ section#video-lightbox button.close-lightbox:after {
 
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: none;
-  border: 2px solid white;
-  opacity: 0.6;
+  border: 2px solid #363340;
+  opacity: 1;
   text-indent: -9999px;
   display: inline-block;
   width: 10px;
@@ -642,7 +745,8 @@ h4 {
 blockquote {
   font-size: 1.875em;
   font-weight: 300;
-  line-height: 1.3em;
+  line-height: 1.2em;
+  letter-spacing: 1px;
   color: white;
   font-style: italic;
   position: relative;
@@ -651,7 +755,7 @@ blockquote {
 }
 @media (min-width: 768px) {
   blockquote {
-    font-size: 2.5em;
+    font-size: 3.125em;
   }
 }
 
@@ -662,6 +766,7 @@ cite {
   color: white;
   letter-spacing: 1px;
   font-weight: 100;
+  color: #484354;
 }
 @media (min-width: 768px) {
   cite {
@@ -673,12 +778,12 @@ cite:before {
   top: -30px;
   left: 0;
   position: absolute;
-  width: 120px;
+  width: 60px;
   height: 1px;
-  background: white;
   left: 50%;
   right: 50%;
-  margin-left: -60px;
+  margin-left: -30px;
+  background: #363340;
 }
 
 /*# sourceMappingURL=style.css.map */

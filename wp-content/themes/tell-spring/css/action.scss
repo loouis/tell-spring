@@ -61,3 +61,33 @@ $video-width : 100px;
 
 
 
+.arrow-down-animation{
+	transform:translate( 0px, 4px);	
+	-webkit-transform:translate( 0px, 4px);	
+	-moz-transform:translate( 0px, 4px);	
+	-o-transform:translate( 0px, 4px);	
+}
+
+body.page-load-animate span.mask .page-load-element{
+	opacity:1 !important;
+	transform: scale(1.1) !important;
+	
+	transform: translate(0, 0px) !important;
+	-webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
+body.page-load-animate video.masthead-video{
+	opacity:1;
+	
+}
+
+body.page-load-animate section.hero .wrapper{
+	opacity:1;
+	transform: scale(1) !important;
+}
+
+
+.lights-out{
+	opacity:0.2;
+}

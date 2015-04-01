@@ -23,19 +23,13 @@ jQuery(document).ready(function($){
 
 	});
 
-	//animated arrow
+	//animate text on page load
+	var spanMask = $('span.mask');
+		slideDownElement = $('.page-load-element');
 
-	// var scrollDown = $('.scroll-down');
+		$('body').delay(2000).addClass('page-load-animate');
 
-	// if ($(window).width() < 400) {
-	// 		clearInterval(Arrow);
-	// 	}
-	// 	else {
-	// 		var Arrow = setInterval(function(){
-	// 			scrollDown.toggleClass("animateArrow");
-	// 	}, 1000);
 
-	// }
 		
 
 	//scroll down
@@ -44,31 +38,53 @@ jQuery(document).ready(function($){
 			scrollTop: $('section#reviews').offset().top -1}, "slow");
 	});
 
-	// //center video in lightbox maths and style
-	// function centerLightbox (){
-	// 	//Variables for lightbox
-	// 	var lightbox = $('section#video-lightbox');
-	// 	var lightBoxHeight = $('section#video-lightbox').height();
-	// 	var videoContainer = $('section#video-lightbox .wrapper');
-	// 	var videoContainerHeight = videoContainer.height();
+	//center video in lightbox maths and style
+	function centerLightbox (){
+		//Variables for lightbox
+		var lightbox = $('section#video-lightbox');
+		var lightBoxHeight = $('section#video-lightbox').height();
+		var videoContainer = $('section#video-lightbox .wrapper');
+		var videoContainerHeight = videoContainer.height();
 
-	// 	//Margintop: lightbox height - video height / 2
-	// 	videoContainer.css('margin-top', - (videoContainerHeight - lightBoxHeight) / 2);
+		//Margintop: lightbox height - video height / 2
+		videoContainer.css('margin-top', - (videoContainerHeight - lightBoxHeight) / 2);
 
-	// 	lightbox.fitVids();
-	// }
+		lightbox.fitVids();
+	}
 
-	// // //video lightbox
-	// $('#video-button').click(function(){
-	// 	$('section#video-lightbox').fadeIn();
-	// 	$('body').addClass("no-scroll");
-	// 	centerLightbox();
+	// //video lightbox
+	$('#video-button').click(function(){
 
-	// 	$(window).on('resize', function(){
-	// 		centerLightbox();
+		$('section.hero').addClass("lights-out");
 
-	// 	}).resize();
-	// });
+		$('section#video-lightbox').delay(1000).fadeIn();
+		$('body').addClass("no-scroll");
+		centerLightbox();
+
+		$(window).on('resize', function(){
+			centerLightbox();
+
+		}).resize();
+	});
+
+	centerLightbox();
+
+
+	// global vars
+	var winHeight = $(window).height();
+
+	fullscreen();
+	$(window).resize(fullscreen);
+
+	function fullscreen() {
+		var masthead = $('.masthead');
+		var fullVideo = $('.video-container');
+		var windowH = $(window).height();
+		var windowW = $(window).width();
+
+		masthead.width(windowW);
+		masthead.height(windowH -120);
+	}
 
 
 	function VerticallyCenterHero(){
@@ -102,20 +118,12 @@ jQuery(document).ready(function($){
 	  });
 
 
+	//Arrow animation in hero
+	var scrollArrow = $('.scroll-down div img');
 
-
-
-	//Hero play video button
-	//play button animation
-	// var outerRing = $('.outer-ring');
-	// var outerRingTwo = $('.outer-ring-two');
-	// var playScale = $('.playscale');
-
- //    var animatePlayButton = setInterval(function(){
- //    	outerRing.toggleClass("playscale");
- //    	outerRingTwo.delay(800).toggleClass("playscale-two");
- //    }, 2500);
-
+	var acrollArrowAnimate = setInterval(function(){
+		scrollArrow.toggleClass("arrow-down-animation");
+	}, 700);
 
 
 
