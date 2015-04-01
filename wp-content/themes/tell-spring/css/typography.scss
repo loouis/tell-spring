@@ -21,17 +21,24 @@ body, html{
 }
 
 
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,p,a{
 	font-family: 'Constantia';
   line-height: 1.3em;
-  padding-bottom:5px;
   color:white;
 }
 
 
 h1{
 	font-size: em(28px);
-	font-weight:600;
+	letter-spacing:3px;
+	font-weight:100;
+	text-align:center;
+	
+	
+	@include screen (medium){
+		font-size: em(62px);
+		line-height:0.9em;
+	}
 }
 
 
@@ -51,6 +58,10 @@ h4{
   text-transform:uppercase;
   letter-spacing:4px;
   text-align:center;
+}
+
+p{
+	
 }
 
 blockquote{

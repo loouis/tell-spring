@@ -303,6 +303,13 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 /*----------------------------------------------------------------------------- Global styles */
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 section, footer {
   width: 100%;
   overflow: hidden;
@@ -321,26 +328,72 @@ img {
   margin: 0 auto;
 }
 
+button {
+  border: 1px solid white;
+  padding: 10px 18px 7px 18px;
+  color: white;
+  margin: 30px auto;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+button a {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
 /*----------------------------------------------------------------------------- Hero */
+section.hero {
+  background: url("./img/hero-img.jpg") no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+section.hero .wrapper div {
+  text-align: center;
+}
+section.hero .wrapper div button a {
+  color: white;
+  text-decoration: none;
+}
 section.hero .wrapper .logo {
   width: 90%;
-  padding: 60px 0px 0 0px;
   margin: 0 auto;
+}
+section.hero .wrapper .logo .awards {
+  padding-bottom: 30px;
+}
+section.hero .wrapper .logo .awards .awards-logo {
+  width: 40px;
+  margin: 0 auto;
+}
+section.hero .wrapper .logo .awards p {
+  color: #9E9E9E;
+}
+section.hero .wrapper .logo .langauge-logo {
+  position: relative;
+  max-width: 500px;
+  margin: 10px auto;
+  padding-top: 15px;
+}
+section.hero .wrapper .logo .langauge-logo:before {
+  content: "";
+  width: 500px;
+  opacity: 0.4;
+  height: 1px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 0;
+  margin-left: -250px;
 }
 @media (min-width: 768px) {
   section.hero .wrapper .logo {
     width: 70%;
-    padding: 100px 20px 0 20px;
-  }
-}
-section.hero .wrapper .center-play-button {
-  margin: 70px auto;
-  width: 100px;
-  cursor: pointer;
-}
-@media (min-width: 768px) {
-  section.hero .wrapper .center-play-button {
-    margin: 100px auto;
   }
 }
 section.hero .scroll-down {
@@ -549,16 +602,23 @@ body, html {
   line-height: 22px;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, p, a {
   font-family: 'Constantia';
   line-height: 1.3em;
-  padding-bottom: 5px;
   color: white;
 }
 
 h1 {
   font-size: 1.75em;
-  font-weight: 600;
+  letter-spacing: 3px;
+  font-weight: 100;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.875em;
+    line-height: 0.9em;
+  }
 }
 
 h2 {

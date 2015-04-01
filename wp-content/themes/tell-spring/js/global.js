@@ -2,9 +2,11 @@ jQuery(document).ready(function($){
 
 	//init
 	$('section#video-lightbox .wrapper').fitVids();
+	//svg fallback
+	svgeezy.init(false, 'png');
 
 	$(window).resize(function() {
-      $('section.hero, .background-images, section#reviews').height($(window).height() - 0);
+      $('section.hero').height($(window).height() -0);
     });
     $(window).trigger('resize');
 
@@ -42,31 +44,48 @@ jQuery(document).ready(function($){
 			scrollTop: $('section#reviews').offset().top -1}, "slow");
 	});
 
-	//center video in lightbox maths and style
-	function centerLightbox (){
-		//Variables for lightbox
-		var lightbox = $('section#video-lightbox');
-		var lightBoxHeight = $('section#video-lightbox').height();
-		var videoContainer = $('section#video-lightbox .wrapper');
-		var videoContainerHeight = videoContainer.height();
+	// //center video in lightbox maths and style
+	// function centerLightbox (){
+	// 	//Variables for lightbox
+	// 	var lightbox = $('section#video-lightbox');
+	// 	var lightBoxHeight = $('section#video-lightbox').height();
+	// 	var videoContainer = $('section#video-lightbox .wrapper');
+	// 	var videoContainerHeight = videoContainer.height();
 
-		//Margintop: lightbox height - video height / 2
-		videoContainer.css('margin-top', - (videoContainerHeight - lightBoxHeight) / 2);
+	// 	//Margintop: lightbox height - video height / 2
+	// 	videoContainer.css('margin-top', - (videoContainerHeight - lightBoxHeight) / 2);
 
-		lightbox.fitVids();
+	// 	lightbox.fitVids();
+	// }
+
+	// // //video lightbox
+	// $('#video-button').click(function(){
+	// 	$('section#video-lightbox').fadeIn();
+	// 	$('body').addClass("no-scroll");
+	// 	centerLightbox();
+
+	// 	$(window).on('resize', function(){
+	// 		centerLightbox();
+
+	// 	}).resize();
+	// });
+
+
+	function VerticallyCenterHero(){
+		var hero = $('section.hero');
+			heroTitle = $('#hero-title');
+
+			heroHeight = hero.height();
+			heroTitleHeight = heroTitle.height();
+
+		heroTitle.css('margin-top', ((heroHeight - heroTitleHeight) / 2 ) - 45);
 	}
 
-	// //video lightbox
-	$('#video-button').click(function(){
-		$('section#video-lightbox').fadeIn();
-		$('body').addClass("no-scroll");
-		centerLightbox();
+	VerticallyCenterHero();
 
-		$(window).on('resize', function(){
-			centerLightbox();
-
-		}).resize();
-	});
+	$(window).on('resize', function(){
+		VerticallyCenterHero();
+	}).resize();
 
 	$('button.close-lightbox').click(function(){
 		$('section#video-lightbox').fadeOut();

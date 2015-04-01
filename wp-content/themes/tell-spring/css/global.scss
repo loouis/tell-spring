@@ -19,6 +19,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*----------------------------------------------------------------------------- Global styles */
 
+*{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	
+}
 
 section, footer{
 	width:100%;
@@ -39,6 +46,25 @@ img{
 	margin: 0 auto;
 }
 
+button{
+	border:1px solid white;
+	padding:10px 18px 7px 18px;
+	color:white;
+	margin: 30px auto;
+	cursor:pointer;
+	text-transform:uppercase;
+	
+	a{
+		font-size:20px;
+		letter-spacing:2px;
+		font-weight:100;
+	}
+	
+	@include screen (medium){
+		// margin: 100px auto;
+	}
+}
+
 
 
 
@@ -47,25 +73,67 @@ img{
 
 section.hero{
 
+	background:url('./img/hero-img.jpg') no-repeat;
+	background-position: 50% 50%;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size: cover;
+  	background-size: cover;
+
 	.wrapper{
+		// height:200px;
+		
+		div{
+			text-align:center;
+			button{
+
+				a{
+					color:white;
+					text-decoration:none;
+				}
+			}
+		}
+		
 		.logo{
 			width:90%;
-			padding:60px 0px 0 0px;
 			margin: 0 auto;
+			
+			.awards{
+				padding-bottom:30px;
+				
+				.awards-logo{
+					width:40px;
+					margin: 0 auto;
+				}
+				
+				p{
+					color:#9E9E9E;
+				}
+			}
+
+			.langauge-logo{
+				position:relative;
+				max-width:500px;
+				margin: 10px auto;
+				padding-top:15px;
+				
+				&:before{
+					content:"";
+					width:500px;
+					opacity:0.4;
+					height:1px;
+					background:white;
+					position:absolute;
+					left:50%;
+					right:50%;
+					top:0;
+					margin-left:-250px;
+				}
+			}
 			
 			@include screen (medium){
 				width:70%;
-				padding:100px 20px 0 20px;
-			}
-		}
-
-		.center-play-button{
-			margin: 70px auto;
-			width:100px;
-			cursor:pointer;
-			
-			@include screen (medium){
-				margin: 100px auto;
 			}
 		}
 	}
@@ -209,7 +277,7 @@ footer{
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size: cover;
-  background-size: cover;
+  	background-size: cover;
 	height:500px;
 
 	
