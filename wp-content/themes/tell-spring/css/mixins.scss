@@ -1,0 +1,82 @@
+@mixin screen($point) {
+  @if $point == small {
+    @media (min-width: 320px) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == large {
+    @media (max-width: 1024px)  { @content; }
+  }
+}
+
+
+//PX to ems
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+
+@mixin clearfix{
+  &:after{
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
+
+
+//vertically align
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+//play button
+
+
+@mixin play-button($play-button){
+
+  .video-play-btn{
+    width:$play-button;
+    height:$play-button;
+    background:white;
+    margin-left:-($play-button / 2);
+    z-index:3;
+    // display:none;
+  }
+  .outer-ring, .outer-ring-two{
+    z-index: 1;
+    width:($play-button - 2px);
+    height:($play-button - 2px);
+    background: darken(white, 20%);
+    top:1px;
+    margin-left:-(($play-button / 2 ) - 1px);
+  }
+  .outer-ring-two{
+    background:white;
+    width:($play-button - 10px);
+    height:($play-button - 10px);
+    top:5px;
+    margin-left:-(($play-button / 2 ) - 5px);
+  }
+}
+
+
+

@@ -1,0 +1,624 @@
+/*
+Theme Name: Tell spring
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: tell spring
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.playscale {
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  transform: scale(2.4);
+}
+
+.playscale-two {
+  opacity: 0;
+  transition: all 2.7s ease-in-out;
+  transform: scale(2.6);
+}
+
+.video-play-btn {
+  width: 100px;
+  height: 100px;
+  background: white;
+  margin-left: -50px;
+  z-index: 3;
+}
+
+.outer-ring, .outer-ring-two {
+  z-index: 1;
+  width: 98px;
+  height: 98px;
+  background: #cccccc;
+  top: 1px;
+  margin-left: -49px;
+}
+
+.outer-ring-two {
+  background: white;
+  width: 90px;
+  height: 90px;
+  top: 5px;
+  margin-left: -45px;
+}
+
+.outer-ring, .video-play-btn, .outer-ring-two {
+  left: 50%;
+  right: 50%;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.play-button-container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-20%);
+  transform: translateY(-20%);
+  left: 50%;
+  right: 50%;
+  margin-left: -50px;
+}
+.play-button-container .video-play-btn {
+  width: 100px;
+  height: 100px;
+  background: white;
+  margin-left: -50px;
+  z-index: 3;
+}
+.play-button-container .outer-ring, .play-button-container .outer-ring-two {
+  z-index: 1;
+  width: 98px;
+  height: 98px;
+  background: #cccccc;
+  top: 1px;
+  margin-left: -49px;
+}
+.play-button-container .outer-ring-two {
+  background: white;
+  width: 90px;
+  height: 90px;
+  top: 5px;
+  margin-left: -45px;
+}
+.play-button-container .outer-ring, .play-button-container .video-play-btn, .play-button-container .outer-ring-two {
+  left: 50%;
+  right: 50%;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.animateArrow {
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -webkit-transform: translate(-50px, -50px);
+  transform: translate(-50px, -50px);
+}
+
+/* Overlay style */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(153, 204, 51, 0.9);
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  background: url(../img/cross.png) no-repeat center center;
+  text-indent: 200%;
+  color: transparent;
+  outline: none;
+  z-index: 100;
+}
+
+/* Menu style */
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.overlay ul li {
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+  min-height: 54px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.overlay ul li a {
+  font-size: 54px;
+  font-weight: 300;
+  display: block;
+  color: #fff;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+  color: #f0f0f0;
+}
+
+/* Effects */
+.overlay-door {
+  visibility: hidden;
+  width: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
+  transition: width 0.5s 0.3s, visibility 0s 0.8s;
+}
+
+.overlay-door.open {
+  visibility: visible;
+  width: 100%;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.overlay-door nav {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.overlay-door nav,
+.overlay-door .overlay-close {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s 0.5s;
+  transition: opacity 0.3s 0.5s;
+}
+
+.overlay-door.open nav,
+.overlay-door.open .overlay-close {
+  opacity: 1;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.overlay-door.close nav,
+.overlay-door.close .overlay-close {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+@media screen and (max-height: 30.5em) {
+  .overlay nav {
+    height: 70%;
+    font-size: 34px;
+  }
+
+  .overlay ul li {
+    min-height: 34px;
+  }
+}
+/*
+Theme Name: Tell spring
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: twentythirteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*----------------------------------------------------------------------------- Global styles */
+section, footer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  background: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*----------------------------------------------------------------------------- Hero */
+section.hero .wrapper .logo {
+  width: 90%;
+  padding: 60px 0px 0 0px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  section.hero .wrapper .logo {
+    width: 70%;
+    padding: 100px 20px 0 20px;
+  }
+}
+section.hero .wrapper .center-play-button {
+  margin: 70px auto;
+  width: 100px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  section.hero .wrapper .center-play-button {
+    margin: 100px auto;
+  }
+}
+section.hero .scroll-down {
+  width: 30px;
+  height: 50px;
+  bottom: 20px;
+  right: 40px;
+  position: absolute;
+  z-index: 101;
+  cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------- Reviews section */
+section#reviews {
+  padding-top: 100px;
+}
+section#reviews .review__container {
+  width: 100%;
+  margin: 0 auto;
+}
+section#reviews .review__container h4 {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+section#reviews .review__container .slider-arrows {
+  width: 40px;
+  height: 40px;
+  background: red;
+}
+section#reviews .review__container ul.bx-slider .wrapper {
+  width: 100%;
+}
+section#reviews .review__container ul.bx-slider .hero-slider {
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+}
+section#reviews .review__container ul.bx-slider .hero-slider .review-icon {
+  margin-bottom: 30px;
+}
+section#reviews .review__container ul.bx-slider .hero-slider .review-icon img {
+  width: 28%;
+}
+
+/*----------------------------------------------------------------------------- Billing back */
+section#billing-block {
+  width: 100%;
+  padding: 0px 0 80px 0;
+}
+section#billing-block .wrapper {
+  max-width: 860px;
+}
+
+/*----------------------------------------------------------------------------- Footer */
+footer {
+  width: 100%;
+  display: block;
+  color: white;
+  padding: 20px 0 60px 0;
+  font-size: 14px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+}
+footer .wrapper {
+  position: relative;
+}
+footer .wrapper:after {
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  content: "";
+  left: 50%;
+  right: 50%;
+  margin-left: -100px;
+  top: -20px;
+}
+footer .wrapper p {
+  text-align: center;
+}
+
+/*----------------------------------------------------------------------------- Background images */
+.background-images {
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: url("./img/hero-img.png") no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+}
+.background-images .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+}
+
+/*----------------------------------------------------------------------------- Video lightbox */
+section#video-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  display: none;
+}
+section#video-lightbox .wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+section#video-lightbox button.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 35px;
+  width: 35px;
+  outline: none;
+  border: none;
+}
+section#video-lightbox button.close-lightbox:before, section#video-lightbox button.close-lightbox:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: white;
+}
+section#video-lightbox button.close-lightbox:before {
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+section#video-lightbox button.close-lightbox:after {
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.bx-controls-direction {
+  display: none !important;
+}
+
+.bx-pager-item {
+  display: inline-block;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: white;
+  opacity: 1;
+}
+
+.bx-controls {
+  text-align: center;
+}
+
+.bx-default-pager {
+  display: inline-block;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: none;
+  border: 2px solid white;
+  opacity: 0.6;
+  text-indent: -9999px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+@font-face {
+  font-family: 'Constantia';
+  src: url("./fonts/Constantia.eot");
+  src: url("./fonts/Constantia.eot") format("embedded-opentype"), url("./fonts/Constantia.woff2") format("woff2"), url("./fonts/Constantia.woff") format("woff"), url("./fonts/Constantia.ttf") format("truetype"), url("./fonts/Constantia.svg#Constantia") format("svg");
+}
+body, html {
+  font-family: "Constantia", georgia, serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Constantia';
+  line-height: 1.3em;
+  padding-bottom: 5px;
+  color: white;
+}
+
+h1 {
+  font-size: 1.75em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 0.875em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+blockquote {
+  font-size: 1.875em;
+  font-weight: 300;
+  line-height: 1.3em;
+  color: white;
+  font-style: italic;
+  position: relative;
+  clear: both;
+  padding-bottom: 60px;
+}
+@media (min-width: 768px) {
+  blockquote {
+    font-size: 2.5em;
+  }
+}
+
+cite {
+  position: relative;
+  font-size: 1.125em;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+@media (min-width: 768px) {
+  cite {
+    font-size: 1.375em;
+  }
+}
+cite:before {
+  content: "";
+  top: -30px;
+  left: 0;
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  background: white;
+  left: 50%;
+  right: 50%;
+  margin-left: -60px;
+}
+
+/*# sourceMappingURL=style.css.map */
