@@ -826,6 +826,11 @@ h1 {
     font-size: 3.875em;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  h1 {
+    font-size: 2em;
+  }
+}
 
 h2 {
   font-size: 1.75em;
