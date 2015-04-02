@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 
-$bg-color: #363340;
+$bg-color: #1B1920;
 
 /*----------------------------------------------------------------------------- Global styles */
 
@@ -28,7 +28,7 @@ $bg-color: #363340;
 }
 
 html{
-	background:black;
+	background:$bg-color;
 }
 
 section, footer{
@@ -79,13 +79,18 @@ button{
 
 section.hero{
 	transition: opacity 2s ease-in-out;
-	background:black;
+	background:$bg-color;
 	z-index:1;
- 	height:1200px;
+	min-height:320px;
+ 	// height:1200px;
 
 	.wrapper{
 		transition: opacity 1.9s ease-in-out;
 		opacity:0;
+		
+		@media (max-height: 320px){
+			margin-top:40px !important;
+		}
 		
 		
 		div{
@@ -131,6 +136,10 @@ section.hero{
 			.awards{
 				padding-bottom:30px;
 				
+				@media (max-height:470px){
+ 					display:none;
+ 				}
+				
 				.awards-logo{
 					width:40px;
 					margin: 0 auto;
@@ -169,6 +178,10 @@ section.hero{
 		color:white;
 		cursor:pointer;
 		
+		@media (max-height:360px){
+			display:none;
+		}
+		
 		transition: opacity .3s ease-in-out;
 		
 		p{
@@ -203,8 +216,12 @@ section.hero{
 
 
 section#reviews{
-	padding-top:100px;
+	padding-top:50px;
 	background:#1B1920;
+	
+	@include screen (medium){
+		padding-top:100px;
+	}
 	
 	.review__container{
 		// max-width:900px;
@@ -432,7 +449,7 @@ section#video-lightbox{
 
 
 .container {
- 	min-height: 460px;
+ 	min-height: 320px;
   position: absolute;
   overflow: hidden;
   display: table;

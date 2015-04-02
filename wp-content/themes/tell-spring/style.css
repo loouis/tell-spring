@@ -345,7 +345,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 html {
-  background: black;
+  background: #1B1920;
 }
 
 section, footer {
@@ -385,13 +385,18 @@ button a {
 /*----------------------------------------------------------------------------- Hero */
 section.hero {
   transition: opacity 2s ease-in-out;
-  background: black;
+  background: #1B1920;
   z-index: 1;
-  height: 1200px;
+  min-height: 320px;
 }
 section.hero .wrapper {
   transition: opacity 1.9s ease-in-out;
   opacity: 0;
+}
+@media (max-height: 320px) {
+  section.hero .wrapper {
+    margin-top: 40px !important;
+  }
 }
 section.hero .wrapper div {
   text-align: center;
@@ -423,6 +428,11 @@ section.hero .wrapper .logo {
 }
 section.hero .wrapper .logo .awards {
   padding-bottom: 30px;
+}
+@media (max-height: 470px) {
+  section.hero .wrapper .logo .awards {
+    display: none;
+  }
 }
 section.hero .wrapper .logo .awards .awards-logo {
   width: 40px;
@@ -458,6 +468,11 @@ section.hero .scroll-down {
   cursor: pointer;
   transition: opacity .3s ease-in-out;
 }
+@media (max-height: 360px) {
+  section.hero .scroll-down {
+    display: none;
+  }
+}
 section.hero .scroll-down p {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -479,8 +494,13 @@ section.hero .scroll-down:hover {
 
 /*----------------------------------------------------------------------------- Reviews section */
 section#reviews {
-  padding-top: 100px;
+  padding-top: 50px;
   background: #1B1920;
+}
+@media (min-width: 768px) {
+  section#reviews {
+    padding-top: 100px;
+  }
 }
 section#reviews .review__container {
   width: 100%;
@@ -655,7 +675,7 @@ section#video-lightbox .close-lightbox-bar button.close-lightbox:after {
 }
 
 .container {
-  min-height: 460px;
+  min-height: 320px;
   position: absolute;
   overflow: hidden;
   display: table;
