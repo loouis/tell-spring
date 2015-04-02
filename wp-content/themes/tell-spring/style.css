@@ -171,7 +171,7 @@ button {
   -o-transform: translate(0px, 4px);
 }
 
-body.page-load-animate span.mask .page-load-element {
+body.page-load-animate .page-load-element {
   opacity: 1 !important;
   transform: scale(1.1) !important;
   transform: translate(0, 0px) !important;
@@ -184,13 +184,18 @@ body.page-load-animate video.masthead-video {
   opacity: 1;
 }
 
+body.page-load-animate .container {
+  opacity: 1;
+}
+
 body.page-load-animate section.hero .wrapper {
   opacity: 1;
   transform: scale(1) !important;
 }
 
 .lights-out {
-  opacity: 0.2;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
 /* Overlay style */
@@ -410,7 +415,7 @@ section.hero .wrapper span.mask .page-load-element {
   opacity: 0;
   transform: scale(0.95);
   padding: 2px 0;
-  transition: transform 1.6s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 section.hero .wrapper .logo {
   width: 90%;
@@ -427,22 +432,11 @@ section.hero .wrapper .logo .awards p {
   color: #9E9E9E;
 }
 section.hero .wrapper .logo .langauge-logo {
+  border-top: 1px solid white;
   position: relative;
   max-width: 500px;
   margin: 10px auto;
   padding-top: 15px;
-}
-section.hero .wrapper .logo .langauge-logo:before {
-  content: "";
-  width: 500px;
-  opacity: 0.4;
-  height: 1px;
-  background: white;
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  top: 0;
-  margin-left: -250px;
 }
 @media (min-width: 768px) {
   section.hero .wrapper .logo {
@@ -483,16 +477,10 @@ section.hero .scroll-down:hover {
   opacity: 0.8;
 }
 
-video.masthead-video {
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
 /*----------------------------------------------------------------------------- Reviews section */
 section#reviews {
   padding-top: 100px;
-  background: #1b1920;
+  background: #1B1920;
 }
 section#reviews .review__container {
   width: 100%;
@@ -527,7 +515,7 @@ section#reviews .review__container ul.bx-slider .hero-slider .review-icon img {
 
 /*----------------------------------------------------------------------------- Billing back */
 section#billing-block {
-  background: #1b1920;
+  background: #1B1920;
   width: 100%;
   padding: 100px 0 80px 0;
 }
@@ -537,7 +525,7 @@ section#billing-block .wrapper {
 section#billing-block .film-company-logos ul {
   text-align: center;
   max-width: 500px;
-  margin: 25px auto;
+  margin: 35px auto;
 }
 section#billing-block .film-company-logos ul li {
   padding: 0 20px;
@@ -564,7 +552,6 @@ footer .wrapper p {
   color: #363340;
 }
 
-/*----------------------------------------------------------------------------- Background images */
 /*----------------------------------------------------------------------------- Video lightbox */
 section#video-lightbox {
   position: fixed;
@@ -676,6 +663,8 @@ section#video-lightbox .close-lightbox-bar button.close-lightbox:after {
   width: 100%;
   left: 0;
   top: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
 .manning {
@@ -693,6 +682,7 @@ section#video-lightbox .close-lightbox-bar button.close-lightbox:after {
   -o-background-size: cover;
   background-size: cover;
   position: absolute;
+  background-position: 50% 50%;
   width: 110%;
   left: -5%;
   top: 0;
@@ -786,15 +776,15 @@ h1, h2, h3, h4, h5, p, a {
 }
 
 h1 {
-  font-size: 1.75em;
+  font-size: 2.625em;
   letter-spacing: 3px;
   font-weight: 100;
+  line-height: 0.9em;
   text-align: center;
 }
 @media (min-width: 768px) {
   h1 {
     font-size: 3.875em;
-    line-height: 0.9em;
   }
 }
 

@@ -29,15 +29,15 @@ h1,h2,h3,h4,h5,p,a{
 
 
 h1{
-	font-size: em(28px);
+	font-size: em(42px);
 	letter-spacing:3px;
 	font-weight:100;
+	line-height:0.9em;
 	text-align:center;
 	
 	
 	@include screen (medium){
 		font-size: em(62px);
-		line-height:0.9em;
 	}
 }
 

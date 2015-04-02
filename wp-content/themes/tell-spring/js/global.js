@@ -47,7 +47,7 @@ jQuery(document).ready(function($){
 	var spanMask = $('span.mask');
 		slideDownElement = $('.page-load-element');
 
-		$('body').delay(2000).addClass('page-load-animate');
+	$('body').delay(2000).addClass('page-load-animate');
 
 
 		
@@ -72,14 +72,20 @@ jQuery(document).ready(function($){
 		lightbox.fitVids();
 	}
 
+
 	// //video lightbox
 	$('#video-button').click(function(){
 
 		$('section.hero').addClass("lights-out");
 
-		$('section#video-lightbox').delay(1000).fadeIn();
+		$('section#video-lightbox').delay(1400).fadeIn(1000);
 		$('body').addClass("no-scroll");
-		centerLightbox();
+		setTimeout(centerLightbox, 1400);
+
+		$('body').removeClass('page-load-animate');
+
+
+
 
 		$(window).on('resize', function(){
 			centerLightbox();
@@ -123,8 +129,10 @@ jQuery(document).ready(function($){
 	}).resize();
 
 	$('button.close-lightbox').click(function(){
-		$('section#video-lightbox').fadeOut();
+		$('section#video-lightbox').fadeOut(1400);
 		$('body').removeClass("no-scroll");
+		$('section.hero').removeClass("lights-out");
+		$('body').addClass('page-load-animate');
 	});
 
 

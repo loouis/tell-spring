@@ -22,14 +22,15 @@ get_header(); ?>
 						<p>Berlinale 2015 Winner Amnesty </br>Human Rights Award Winner Audience Choice Award </p>
 					</div>
 
-
-					<span class="mask"><h1 class="page-load-element">TELL SPRING NOT TO</h1></span>
-					<span class="mask"><h1 class="page-load-element">COME THIS YEAR</h1></span> 
-
+					<h1 class="page-load-element">TELL SPRING NOT TO </br> COME THIS YEAR</h1>
 
 					<div class="langauge-logo">
 						<img src="<?php bloginfo(template_url);?>/img/lanuage-logo.svg" alt="">
 					</div>
+
+					<button>
+						<a href="#" id="video-button">Watch trailer</a>
+					</button>
 				</div><!-- / LOGO -->
 
 			</div><!-- // Vertically centered lockup -->
@@ -45,14 +46,10 @@ get_header(); ?>
 					<li class="layer manning" data-depth="2.00">
 						<div class="background-images" style="background-image: url('<?php bloginfo(template_url);?>/img/cut-out-tree.png');"></div>
 					</li>
-  					
-  					<li class="layer" data-depth="0.40"><img src=""></li>
-  					<li class="layer" data-depth="0.60"><img src=""></li>
 
-
-
-					<!-- <li class="layer" data-depth="0.80"><img src="<?php bloginfo(template_url);?>/img/"></li>
-					<li class="layer" data-depth="0.60"><img src="<?php bloginfo(template_url);?>/img/"></li> -->
+					<li class="layer manning" data-depth="2.00">
+						<div class="background-images" style="background-image: url('<?php bloginfo(template_url);?>/img/cut-out-shadow.png');"></div>
+					</li>
 				</ul>
 			</div>
 		
@@ -98,8 +95,8 @@ get_header(); ?>
 			<div class="film-company-logos">
 				<ul>
 					<li><a href=""><img src="<?php bloginfo(template_url);?>/img/ponda_logo.svg" alt=""></a></li>
-					<li><a href=""><img src="<?php bloginfo(template_url);?>/img/ponda_logo.svg" alt=""></a></li>
-					<li><a href=""><img src="<?php bloginfo(template_url);?>/img/ponda_logo.svg" alt=""></a></li>
+					<li><a href=""><img src="<?php bloginfo(template_url);?>/img/tourist_logo.png" alt=""></a></li>
+					<li><a href=""><img src="<?php bloginfo(template_url);?>/img/creative_commons_logo.png" alt=""></a></li>
 				</ul>
 			</div>
 		</section>

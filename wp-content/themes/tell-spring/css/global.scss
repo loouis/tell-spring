@@ -78,27 +78,14 @@ button{
 
 
 section.hero{
-
 	transition: opacity 2s ease-in-out;
-
-	// background:url('./img/hero-img.jpg') no-repeat;
-	// background-position: 50% 50%;
-	// background-size:cover;
-	// -webkit-background-size:cover;
-	// -moz-background-size:cover;
-	// -o-background-size: cover;
- //  	background-size: cover;
- 
- background:black;
- 
- z-index:1;
- height:1200px;
+	background:black;
+	z-index:1;
+ 	height:1200px;
 
 	.wrapper{
 		transition: opacity 1.9s ease-in-out;
 		opacity:0;
-		
-		// transform: scale(0.98);
 		
 		
 		div{
@@ -131,9 +118,9 @@ section.hero{
 				opacity:0;
 				transform: scale(0.95);
 				padding: 2px 0;
-				transition: transform 1.6s ease-in-out;
 				
-				// transition: opacity 1s ease-in-out;
+				transition: all 2s ease-in-out;
+				
 			}
 		}
 		
@@ -155,23 +142,11 @@ section.hero{
 			}
 
 			.langauge-logo{
+				border-top:1px solid white;
 				position:relative;
 				max-width:500px;
 				margin: 10px auto;
 				padding-top:15px;
-				
-				&:before{
-					content:"";
-					width:500px;
-					opacity:0.4;
-					height:1px;
-					background:white;
-					position:absolute;
-					left:50%;
-					right:50%;
-					top:0;
-					margin-left:-250px;
-				}
 			}
 			
 			@include screen (medium){
@@ -221,13 +196,6 @@ section.hero{
 
 }
 
-video.masthead-video{
-	z-index:0;
-	opacity:0;
-
-	transition: opacity 1.5s ease-in-out;
-}
-
 
 
 
@@ -236,7 +204,7 @@ video.masthead-video{
 
 section#reviews{
 	padding-top:100px;
-	background:#1b1920;
+	background:#1B1920;
 	
 	.review__container{
 		// max-width:900px;
@@ -298,7 +266,7 @@ section#reviews{
 
 
 section#billing-block{
-	background:#1b1920;
+	background:#1B1920;
 	width:100%;
 	padding:100px 0 80px 0;
 	
@@ -311,7 +279,7 @@ section#billing-block{
 		ul{
 			text-align:center;
 			max-width:500px;
-			margin: 25px auto;
+			margin: 35px auto;
 			
 			li{
 				padding:0 20px;
@@ -340,22 +308,9 @@ footer{
 	font-size:14px;
 	letter-spacing:1px;
 	background:#1b1920;
-	// border-top:1px solid #363340;
 	
 	.wrapper{
 		position:relative;
-		
-		// &:after{
-		// 	position:absolute;
-		// 	width:200px;
-		// 	height:1px;
-		// 	background:rgba(255,255,255,0.4);
-		// 	content:"";
-		// 	left:50%;
-		// 	right:50%;
-		// 	margin-left:-100px;
-		// 	top:-20px;
-		// }
 		
 		p{
 			text-align:center;
@@ -363,32 +318,6 @@ footer{
 		}
 	}
 }
-
-
-
-
-/*----------------------------------------------------------------------------- Background images */
-
-
-// .background-images{
-
-
-
-	
-// 	.overlay{
-// 		background:rgba(0,0,0,.7);
-// 		position:absolute;
-// 		top:0;
-// 		left:0;
-// 		z-index:2;
-// 		width:100%;
-// 		bottom:0;
-// 		right:0;
-		
-// 	}
-// }
-
-
 
 
 
@@ -460,18 +389,6 @@ section#video-lightbox{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .bx-controls-direction{
 	display:none !important;
 }
@@ -523,6 +440,9 @@ section#video-lightbox{
   width: 100%;
   left: 0;
   top: 0;
+  opacity:0;
+  
+  transition: opacity 2s ease-in-out;
 }
 
 .manning{
@@ -540,6 +460,7 @@ section#video-lightbox{
 	-o-background-size: cover;
   	background-size: cover;
   position: absolute;
+  background-position: 50% 50%;
   width: 110%;
   left: -5%;
   top: 0;
