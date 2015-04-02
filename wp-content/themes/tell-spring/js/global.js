@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
 	svgeezy.init(false, 'png');
 
 	$(window).resize(function() {
-      $('section.hero').height($(window).height() -0);
+      $('section.hero, .background-images, .manning').height($(window).height() -0);
     });
     $(window).trigger('resize');
 
@@ -22,6 +22,26 @@ jQuery(document).ready(function($){
 		// prevText: '← Go back'
 
 	});
+
+	//Parallax
+	$('#scene').parallax({
+	  calibrateX: true,
+	  calibrateY: true,
+	  invertX: true,
+	  invertY: true,
+	  limitX: true,
+	  limitY: 10,
+	  scalarX: 2,
+	  scalarY: 8,
+	  frictionX: 0.2,
+	  frictionY: 0.8,
+	  originX: 1.0,
+	  originY: 1.0
+	});
+
+
+
+
 
 	//animate text on page load
 	var spanMask = $('span.mask');

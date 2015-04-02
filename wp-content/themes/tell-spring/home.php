@@ -12,38 +12,49 @@ get_header(); ?>
 			</div>
 
 
-			<video class="masthead-video" autoplay loop muted>
-				<source src="<?php bloginfo(template_url);?>/vids/tell-spring.mp4" type="video/mp4">
-				<!-- <source src="<?php bloginfo(template_url);?>/vids/tell-spring.webm" type="video/webm"> -->
-			</video>
-
 			<!-- Vertically centered lockup -->
 			<div class="wrapper" id="hero-title">
 				<div class="logo">
-				<div class="awards">
-					<div class="awards-logo">
-						<img src="<?php bloginfo(template_url);?>/img/Berlinale_logo.svg" alt="">
+					<div class="awards">
+						<div class="awards-logo">
+							<img src="<?php bloginfo(template_url);?>/img/Berlinale_logo.svg" alt="">
+						</div>
+						<p>Berlinale 2015 Winner Amnesty </br>Human Rights Award Winner Audience Choice Award </p>
 					</div>
-					<p>Berlinale 2015 Winner Amnesty </br>Human Rights Award Winner Audience Choice Award </p>
-				</div>
 
 
-				<span class="mask"><h1 class="page-load-element">TELL SPRING NOT TO</h1></span>
-				<span class="mask"><h1 class="page-load-element">COME THIS YEAR</h1></span> 
+					<span class="mask"><h1 class="page-load-element">TELL SPRING NOT TO</h1></span>
+					<span class="mask"><h1 class="page-load-element">COME THIS YEAR</h1></span> 
 
 
 					<div class="langauge-logo">
 						<img src="<?php bloginfo(template_url);?>/img/lanuage-logo.svg" alt="">
 					</div>
-				</div>
-				
-				<div>
-					<button class="center-play-button" style="text-align:center;">
-						<a href="#" id="video-button" style="display:block;">Watch trailer</a>
-					</button>
-				</div>
+				</div><!-- / LOGO -->
 
 			</div><!-- // Vertically centered lockup -->
+
+			<div id="container" class="container">
+				<ul id="scene" class="scene">
+					<li class="layer" data-depth="1.00">
+						<div class="background-images" style="background-image: url('<?php bloginfo(template_url);?>/img/cut-out-background.jpg');"></div>
+					</li>
+					<li class="layer manning" data-depth="0.60">
+						<div class="background-images" style="background-image: url('<?php bloginfo(template_url);?>/img/cut-out-man.png');"></div>
+					</li>
+					<li class="layer manning" data-depth="2.00">
+						<div class="background-images" style="background-image: url('<?php bloginfo(template_url);?>/img/cut-out-tree.png');"></div>
+					</li>
+  					
+  					<li class="layer" data-depth="0.40"><img src=""></li>
+  					<li class="layer" data-depth="0.60"><img src=""></li>
+
+
+
+					<!-- <li class="layer" data-depth="0.80"><img src="<?php bloginfo(template_url);?>/img/"></li>
+					<li class="layer" data-depth="0.60"><img src="<?php bloginfo(template_url);?>/img/"></li> -->
+				</ul>
+			</div>
 		
 		</section>
 
@@ -76,7 +87,6 @@ get_header(); ?>
 					<?php endwhile; ?>
 
 				</ul>
-
 			</div>
 		</section>
 

@@ -370,35 +370,23 @@ footer{
 /*----------------------------------------------------------------------------- Background images */
 
 
-.background-images{
-	position:fixed;
-	width:100%;
-	z-index:0;
-	top:0;
-	bottom:0;
-	left:0;
-	background:url('./img/hero-img.png') no-repeat;
-	background-position: 50% 50%;
-	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size: cover;
-  	background-size: cover;
-	height:500px;
+// .background-images{
+
+
 
 	
-	.overlay{
-		background:rgba(0,0,0,.7);
-		position:absolute;
-		top:0;
-		left:0;
-		z-index:2;
-		width:100%;
-		bottom:0;
-		right:0;
+// 	.overlay{
+// 		background:rgba(0,0,0,.7);
+// 		position:absolute;
+// 		top:0;
+// 		left:0;
+// 		z-index:2;
+// 		width:100%;
+// 		bottom:0;
+// 		right:0;
 		
-	}
-}
+// 	}
+// }
 
 
 
@@ -522,3 +510,107 @@ section#video-lightbox{
 
 
 
+
+//----------------------------------------------------------------------------- Parallax
+
+
+.container {
+ 	min-height: 460px;
+  position: absolute;
+  overflow: hidden;
+  display: table;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.manning{
+	z-index:9999;
+	height:400px;
+	position:absolute;
+	width:100%;
+}
+
+.background-images{
+	bottom: 0px;
+  background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size: cover;
+  	background-size: cover;
+  position: absolute;
+  width: 110%;
+  left: -5%;
+  top: 0;
+}
+
+
+
+.scene {
+  padding: 0;
+  margin: 0;
+}
+
+.fill {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  top: 5%;
+}
+
+.expand-width {
+  width: 100%;
+}
+
+.border {
+  border: 2px dashed #00FFAA;
+}
+
+.aspect {
+  opacity: 0.2;
+}
+
+.layer:nth-child(1) {
+  opacity: 1;
+}
+.layer:nth-child(1) button {
+
+      z-index:99;
+}
+
+.layer:nth-child(2) {
+  opacity: 1;
+  z-index:99;
+}
+.layer:nth-child(2) button {
+  -webkit-transform: rotate(120deg);
+}
+
+.layer:nth-child(3) {
+  opacity: 1;
+}
+.layer:nth-child(3) button {
+  -webkit-transform: rotate(90deg);
+}
+
+.layer:nth-child(4) {
+  opacity: 1;
+}
+.layer:nth-child(4) button {
+  -webkit-transform: rotate(60deg);
+}
+
+.layer:nth-child(5) {
+  opacity: 0.75;
+}
+.layer:nth-child(5) button {
+  -webkit-transform: rotate(30deg);
+}
+
+.layer:nth-child(6) {
+  opacity: 0.90;
+}
+.layer:nth-child(6) button {
+}
