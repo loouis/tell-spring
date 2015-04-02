@@ -67,7 +67,6 @@ jQuery(document).ready(function($){
 		}).resize();
 	});
 
-	centerLightbox();
 
 
 	// global vars
