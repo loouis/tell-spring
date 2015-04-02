@@ -392,6 +392,7 @@ section.hero {
 section.hero .wrapper {
   transition: opacity 1.9s ease-in-out;
   opacity: 0;
+  padding-top: 20px;
 }
 @media (max-height: 320px) {
   section.hero .wrapper {
@@ -435,8 +436,14 @@ section.hero .wrapper .logo .awards {
   }
 }
 section.hero .wrapper .logo .awards .awards-logo {
+  display: none;
   width: 40px;
   margin: 0 auto;
+}
+@media (min-width: 768px) {
+  section.hero .wrapper .logo .awards .awards-logo {
+    display: block;
+  }
 }
 section.hero .wrapper .logo .awards p {
   color: #9E9E9E;
@@ -456,7 +463,7 @@ section.hero .wrapper .logo .langauge-logo {
 section.hero .scroll-down {
   width: 100px;
   height: 30px;
-  bottom: 40px;
+  bottom: 20px;
   right: 40px;
   position: absolute;
   left: 50%;
@@ -467,10 +474,17 @@ section.hero .scroll-down {
   color: white;
   cursor: pointer;
   transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
 }
 @media (max-height: 360px) {
   section.hero .scroll-down {
     display: none;
+  }
+}
+@media (min-width: 768px) {
+  section.hero .scroll-down {
+    bottom: 40px;
   }
 }
 section.hero .scroll-down p {
@@ -537,7 +551,12 @@ section#reviews .review__container ul.bx-slider .hero-slider .review-icon img {
 section#billing-block {
   background: #1B1920;
   width: 100%;
-  padding: 100px 0 80px 0;
+  padding: 100px 0 0px 0;
+}
+@media (min-width: 768px) {
+  section#billing-block {
+    padding-bottom: 80px;
+  }
 }
 section#billing-block .wrapper {
   max-width: 860px;
@@ -836,10 +855,13 @@ blockquote {
   position: relative;
   clear: both;
   padding-bottom: 60px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 @media (min-width: 768px) {
   blockquote {
     font-size: 3.125em;
+    padding-bottom: 60px;
   }
 }
 
