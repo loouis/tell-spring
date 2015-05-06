@@ -68,7 +68,7 @@ $video-width : 100px;
 	-o-transform:translate( 0px, 4px);	
 }
 
-body.page-load-animate span.mask .page-load-element{
+body.page-load-animate .page-load-element{
 	opacity:1 !important;
 	transform: scale(1.1) !important;
 	
@@ -78,6 +78,10 @@ body.page-load-animate span.mask .page-load-element{
 }
 
 body.page-load-animate video.masthead-video{
+	opacity:1;
+}
+
+body.page-load-animate .container{
 	opacity:1;
 	
 }
@@ -89,5 +93,6 @@ body.page-load-animate section.hero .wrapper{
 
 
 .lights-out{
-	opacity:0.2;
+	opacity:0;
+	transition: opacity 2s ease-in-out;
 }

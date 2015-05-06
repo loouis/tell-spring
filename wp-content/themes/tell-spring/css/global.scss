@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 
-$bg-color: #363340;
+$bg-color: #1B1920;
 
 /*----------------------------------------------------------------------------- Global styles */
 
@@ -28,7 +28,7 @@ $bg-color: #363340;
 }
 
 html{
-	background:black;
+	background:$bg-color;
 }
 
 section, footer{
@@ -78,27 +78,25 @@ button{
 
 
 section.hero{
-
 	transition: opacity 2s ease-in-out;
-
-	// background:url('./img/hero-img.jpg') no-repeat;
-	// background-position: 50% 50%;
-	// background-size:cover;
-	// -webkit-background-size:cover;
-	// -moz-background-size:cover;
-	// -o-background-size: cover;
- //  	background-size: cover;
- 
- background:black;
- 
- z-index:1;
- height:1200px;
+	background:$bg-color;
+	z-index:1;
+	min-height:320px;
+ 	// height:1200px;
 
 	.wrapper{
 		transition: opacity 1.9s ease-in-out;
 		opacity:0;
 		
-		// transform: scale(0.98);
+		padding-top:20px;
+		
+		@media (max-height: 320px){
+			margin-top:40px !important;
+		}
+
+		// @media (min-width:500px){
+		// 	padding-top:auto;
+		// }
 		
 		
 		div{
@@ -131,9 +129,9 @@ section.hero{
 				opacity:0;
 				transform: scale(0.95);
 				padding: 2px 0;
-				transition: transform 1.6s ease-in-out;
 				
-				// transition: opacity 1s ease-in-out;
+				transition: all 2s ease-in-out;
+				
 			}
 		}
 		
@@ -144,9 +142,18 @@ section.hero{
 			.awards{
 				padding-bottom:30px;
 				
+				@media (max-height:470px){
+ 					display:none;
+ 				}
+				
 				.awards-logo{
+					display:none;
 					width:40px;
 					margin: 0 auto;
+					
+					@include screen (medium){
+						display:block;
+					}
 				}
 				
 				p{
@@ -155,23 +162,11 @@ section.hero{
 			}
 
 			.langauge-logo{
+				border-top:1px solid white;
 				position:relative;
 				max-width:500px;
 				margin: 10px auto;
 				padding-top:15px;
-				
-				&:before{
-					content:"";
-					width:500px;
-					opacity:0.4;
-					height:1px;
-					background:white;
-					position:absolute;
-					left:50%;
-					right:50%;
-					top:0;
-					margin-left:-250px;
-				}
 			}
 			
 			@include screen (medium){
@@ -183,7 +178,7 @@ section.hero{
 	.scroll-down{
 		width:100px;
 		height:30px;
-		bottom:40px;
+		bottom:20px;
 		right:40px;
 		position:absolute;
 		left:50%;
@@ -194,7 +189,17 @@ section.hero{
 		color:white;
 		cursor:pointer;
 		
+		@media (max-height:360px){
+			display:none;
+		}
+
+		@include screen (medium){
+			bottom:40px;
+		}
+		
 		transition: opacity .3s ease-in-out;
+		-moz-transition: opacity .3s ease-in-out;
+		-webkit-transition: opacity .3s ease-in-out;
 		
 		p{
 			text-transform:uppercase;
@@ -221,13 +226,6 @@ section.hero{
 
 }
 
-video.masthead-video{
-	z-index:0;
-	opacity:0;
-
-	transition: opacity 1.5s ease-in-out;
-}
-
 
 
 
@@ -235,8 +233,12 @@ video.masthead-video{
 
 
 section#reviews{
-	padding-top:100px;
-	background:#1b1920;
+	padding-top:50px;
+	background:#1B1920;
+	
+	@include screen (medium){
+		padding-top:100px;
+	}
 	
 	.review__container{
 		// max-width:900px;
@@ -298,9 +300,13 @@ section#reviews{
 
 
 section#billing-block{
-	background:#1b1920;
+	background:#1B1920;
 	width:100%;
-	padding:100px 0 80px 0;
+	padding:100px 0 0px 0;
+	
+	@include screen (medium){
+		padding-bottom:80px;
+	}
 	
 	.wrapper{
 		max-width:860px;
@@ -311,7 +317,7 @@ section#billing-block{
 		ul{
 			text-align:center;
 			max-width:500px;
-			margin: 25px auto;
+			margin: 35px auto;
 			
 			li{
 				padding:0 20px;
@@ -340,22 +346,9 @@ footer{
 	font-size:14px;
 	letter-spacing:1px;
 	background:#1b1920;
-	// border-top:1px solid #363340;
 	
 	.wrapper{
 		position:relative;
-		
-		// &:after{
-		// 	position:absolute;
-		// 	width:200px;
-		// 	height:1px;
-		// 	background:rgba(255,255,255,0.4);
-		// 	content:"";
-		// 	left:50%;
-		// 	right:50%;
-		// 	margin-left:-100px;
-		// 	top:-20px;
-		// }
 		
 		p{
 			text-align:center;
@@ -363,44 +356,6 @@ footer{
 		}
 	}
 }
-
-
-
-
-/*----------------------------------------------------------------------------- Background images */
-
-
-.background-images{
-	position:fixed;
-	width:100%;
-	z-index:0;
-	top:0;
-	bottom:0;
-	left:0;
-	background:url('./img/hero-img.png') no-repeat;
-	background-position: 50% 50%;
-	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size: cover;
-  	background-size: cover;
-	height:500px;
-
-	
-	.overlay{
-		background:rgba(0,0,0,.7);
-		position:absolute;
-		top:0;
-		left:0;
-		z-index:2;
-		width:100%;
-		bottom:0;
-		right:0;
-		
-	}
-}
-
-
 
 
 
@@ -472,18 +427,6 @@ section#video-lightbox{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .bx-controls-direction{
 	display:none !important;
 }
@@ -522,3 +465,111 @@ section#video-lightbox{
 
 
 
+
+//----------------------------------------------------------------------------- Parallax
+
+
+.container {
+ 	min-height: 320px;
+  position: absolute;
+  overflow: hidden;
+  display: table;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity:0;
+  
+  transition: opacity 2s ease-in-out;
+}
+
+.manning{
+	z-index:9999;
+	height:400px;
+	position:absolute;
+	width:100%;
+}
+
+.background-images{
+	bottom: 0px;
+  background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size: cover;
+  	background-size: cover;
+  position: absolute;
+  background-position: 50% 50%;
+  width: 110%;
+  left: -5%;
+  top: 0;
+}
+
+
+
+.scene {
+  padding: 0;
+  margin: 0;
+}
+
+.fill {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  top: 5%;
+}
+
+.expand-width {
+  width: 100%;
+}
+
+.border {
+  border: 2px dashed #00FFAA;
+}
+
+.aspect {
+  opacity: 0.2;
+}
+
+.layer:nth-child(1) {
+  opacity: 1;
+}
+.layer:nth-child(1) button {
+
+      z-index:99;
+}
+
+.layer:nth-child(2) {
+  opacity: 1;
+  z-index:99;
+}
+.layer:nth-child(2) button {
+  -webkit-transform: rotate(120deg);
+}
+
+.layer:nth-child(3) {
+  opacity: 1;
+}
+.layer:nth-child(3) button {
+  -webkit-transform: rotate(90deg);
+}
+
+.layer:nth-child(4) {
+  opacity: 1;
+}
+.layer:nth-child(4) button {
+  -webkit-transform: rotate(60deg);
+}
+
+.layer:nth-child(5) {
+  opacity: 0.75;
+}
+.layer:nth-child(5) button {
+  -webkit-transform: rotate(30deg);
+}
+
+.layer:nth-child(6) {
+  opacity: 0.90;
+}
+.layer:nth-child(6) button {
+}

@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
 	svgeezy.init(false, 'png');
 
 	$(window).resize(function() {
-      $('section.hero').height($(window).height() -0);
+      $('section.hero, .background-images, .manning').height($(window).height() -0);
     });
     $(window).trigger('resize');
 
@@ -23,11 +23,31 @@ jQuery(document).ready(function($){
 
 	});
 
+	//Parallax
+	$('#scene').parallax({
+	  calibrateX: true,
+	  calibrateY: true,
+	  invertX: true,
+	  invertY: true,
+	  limitX: true,
+	  limitY: 10,
+	  scalarX: 2,
+	  scalarY: 8,
+	  frictionX: 0.2,
+	  frictionY: 0.8,
+	  originX: 1.0,
+	  originY: 1.0
+	});
+
+
+
+
+
 	//animate text on page load
 	var spanMask = $('span.mask');
 		slideDownElement = $('.page-load-element');
 
-		$('body').delay(2000).addClass('page-load-animate');
+	$('body').delay(2000).addClass('page-load-animate');
 
 
 		
@@ -52,14 +72,20 @@ jQuery(document).ready(function($){
 		lightbox.fitVids();
 	}
 
+
 	// //video lightbox
 	$('#video-button').click(function(){
 
 		$('section.hero').addClass("lights-out");
 
-		$('section#video-lightbox').delay(1000).fadeIn();
+		$('section#video-lightbox').delay(1400).fadeIn(1000);
 		$('body').addClass("no-scroll");
-		centerLightbox();
+		setTimeout(centerLightbox, 1400);
+
+		$('body').removeClass('page-load-animate');
+
+
+
 
 		$(window).on('resize', function(){
 			centerLightbox();
@@ -103,8 +129,10 @@ jQuery(document).ready(function($){
 	}).resize();
 
 	$('button.close-lightbox').click(function(){
-		$('section#video-lightbox').fadeOut();
+		$('section#video-lightbox').fadeOut(1400);
 		$('body').removeClass("no-scroll");
+		$('section.hero').removeClass("lights-out");
+		$('body').addClass('page-load-animate');
 	});
 
 

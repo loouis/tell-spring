@@ -29,16 +29,22 @@ h1,h2,h3,h4,h5,p,a{
 
 
 h1{
-	font-size: em(28px);
+	font-size: em(42px);
 	letter-spacing:3px;
 	font-weight:100;
+	line-height:0.9em;
 	text-align:center;
 	
 	
 	@include screen (medium){
 		font-size: em(62px);
-		line-height:0.9em;
 	}
+
+
+	@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) { font-size: em(32px);}
 }
 
 
@@ -73,10 +79,12 @@ blockquote{
 	position:relative;
 	clear:both;
 	padding-bottom:60px;
-	// padding: 0 20px;
+	padding-right:10px;
+	padding-left:10px;	
 	
 	@include screen (medium){
 		font-size: em(50px);
+		padding-bottom:60px;
 	}
 
 }
