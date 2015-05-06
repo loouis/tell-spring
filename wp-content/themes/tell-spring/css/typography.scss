@@ -70,7 +70,6 @@ blockquote{
 	line-height:1.2em;
 	letter-spacing:1px;
 	color:white;
-	font-style:italic;
 	position:relative;
 	clear:both;
 	padding-bottom:60px;
@@ -89,7 +88,7 @@ cite{
 	color:white;
 	letter-spacing:1px;
 	font-weight:100;
-	color:#484354;
+	color:#9E9DA0;
 	
 	@include screen (medium){
 		font-size: em(22px);
@@ -98,7 +97,7 @@ cite{
 
 	&:before{
 		content:"";
-		top:-30px;
+		top:-35px;
 		left:0;
 		position:absolute;
 		width:60px;
