@@ -18,10 +18,8 @@
 			</div>
 		</section>
 
-		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-		<script src="<?php bloginfo(template_url);?>/js/libs/query.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="<?php bloginfo(template_url);?>/js/libs/parallax.js"></script>
-		
 		<script src="<?php bloginfo(template_url);?>/js/libs/bxslider.min.js"></script>
 		<script src="<?php bloginfo(template_url);?>/js/libs/fitvids.js"></script>
 		<script src="<?php bloginfo(template_url);?>/js/libs/svgeezy.js"></script>
